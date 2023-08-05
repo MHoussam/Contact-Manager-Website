@@ -12,6 +12,8 @@ Route::group(["middleware"=>"auth:api"],function(){
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::get('/a', [WhereController::class, 'write']);
+    Route::post('displayContacts', [WhereController::class, 'displayContacts']);
+    Route::post('addContact', [WhereController::class, 'addContact']);
 });
 
 Route::post('login', [AuthController::class, 'login']);

@@ -13,10 +13,22 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->id();            
+            $table->integer('user_id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->integer('phone')->unique();
+            $table->float('address_latitude');
+            $table->float('address_longitude');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -28,5 +40,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('contacts');
     }
 };

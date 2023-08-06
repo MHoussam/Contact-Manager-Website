@@ -1,0 +1,17 @@
+.contacts-title {
+}
+
+.title, .add-container {
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.add {
+    width: 15%;
+    margin-right: 7%;
+}
+
+.add-btn {
+    padding: 6%;
+    border-radius: 10px;
+}

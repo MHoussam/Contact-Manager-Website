@@ -1,6 +1,8 @@
 import axios from "axios";
 import ContactForm from "../../Components/ContactForm"
 import ContactsList from "../../Components/ContactsList"
+import "../../styles/contacts.css";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Contacts = ()=>{
@@ -16,10 +18,26 @@ const Contacts = ()=>{
     fetchContacts()
   }, [])
 
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/addContact");
+  };
+
   return (
     <div>
-      <h1 className="center flex">Contacts</h1>
-      <ContactForm setContacts={setContacts}/>
+      <div className="header flex">
+        <div className="title flex">
+          <h1 className="flex contacts-title">Contacts</h1>
+        </div>
+
+        <div className="add-container flex">
+          <div className="add center flex">
+            <button className="add-btn pointer" onClick={handleButtonClick}>Add Contact</button>
+          </div>
+        </div>
+      </div>
+      {/* <ContactForm setContacts={setContacts}/> */}
       <ContactsList contacts={contacts}/>
     </div>
   )

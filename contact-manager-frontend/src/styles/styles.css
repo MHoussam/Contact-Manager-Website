@@ -1,0 +1,13 @@
+.postform_container{
+  display: flex; 
+  flex-direction: row;
+  margin-left: 50px;
+}
+
+.center {
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}

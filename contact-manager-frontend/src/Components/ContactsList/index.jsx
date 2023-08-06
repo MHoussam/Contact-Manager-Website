@@ -1,4 +1,6 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import "../../styles/list.css";
+import cardPic from '../../assets/images/contact.png';
 
 const ContactsList = ({contacts})=>{
 
@@ -10,19 +12,18 @@ const ContactsList = ({contacts})=>{
   }
 
   return (
-    <div>
-      <ul>
-      {Array.isArray(contacts) && // Check if 'contacts' is an array
-          contacts.map((contact, index) => (
-            <li
-              style={{ backgroundColor: "cyan", margin: 10 }}
-              key={index}
-              onClick={() => handleNavigate(contact.id)}
-            >
-              {contact.first_name}
-            </li>
-          ))}
-      </ul>
+    <div className="cards flex wrap">
+        {contacts.map((contact, index) => (
+          <div className="card pointer"
+            key={index}
+            onClick={() => handleNavigate(contact.id)}
+          >
+            <img src={cardPic} alt="Avatar" className="card-pic" />
+            <div className="container flex center bold">
+              {contact.first_name} {contact.last_name}
+            </div>
+          </div>
+        ))}
     </div>
   )
 }

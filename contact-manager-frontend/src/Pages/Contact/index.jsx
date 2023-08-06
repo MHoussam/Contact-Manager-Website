@@ -9,7 +9,7 @@ const Contact = () => {
   const fetchContact = async () => {
     try {
       const response = await axios.get(`http://localhost:8000/api/displayContacts/${id}`);
-      console.log('contact:', response.data[0][0]); // Correctly access response.data
+      console.log('contact:', response.data[0][0]);
       setContact(response.data[0][0]);
     } catch (error) {
       console.log(error);

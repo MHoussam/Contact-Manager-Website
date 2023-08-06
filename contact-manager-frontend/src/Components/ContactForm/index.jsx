@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "../../styles/styles.css"
 
-const PostForm = ({setContacts}) =>{
+const ContactForm = ({setContacts}) =>{
   const [data, setData] = useState({
     first_name: "",
     last_name: "",
@@ -30,7 +30,7 @@ const PostForm = ({setContacts}) =>{
   }
 
   return (
-    <div className="postform_container">
+    <div className="contactform_container">
       <input name="first_name" placeholder="First Name" defaultValue={data.first_name} value={data.first_name} onChange={handleDataChange}/>
       <input name="last_name" placeholder="Last Name" defaultValue={data.last_name} value={data.last_name} onChange={handleDataChange}/>
       <input name="phone" placeholder="Phone Number" type="number" defaultValue={data.phone} value={data.phone} onChange={handleDataChange}/>
@@ -41,4 +41,4 @@ const PostForm = ({setContacts}) =>{
   )
 }
 
-export default PostForm;
+export default ContactForm;

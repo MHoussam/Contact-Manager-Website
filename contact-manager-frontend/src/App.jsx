@@ -10,7 +10,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Contacts />} />
-        <Route path='*' element={<h1>404</h1>} />
+        <Route path=":id" element={<Contact />} />
+        <Route path='*' element={<h1>4044444</h1>} />
       </Routes>
     </BrowserRouter>
   );

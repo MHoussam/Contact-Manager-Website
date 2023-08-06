@@ -8,26 +8,32 @@ use app\Models\User;
 use App\Models\Contact;
 
 
+// header("Content-type: application/json; charset=utf-8");
+// header('Access-Control-Allow-Origin: http://127.0.0.1:3000');
+// header('Access-Control-Allow-Methods: POST');
+// header("Access-Control-Allow-Headers: Content-Type");
+
 class WhereController extends Controller {
     public function write() {
         return 'hi';
     }
 
-    public function displayContacts (Request $request) {
+    public function displayContacts ($contact_id = null) {
         
-        $user_id = $request->user_id;
-        $contacts = Contact::where('user_id', $user_id)->get();
+        if (!is_null($contact_id)) {
+            $contacts = Contact::where('id', $contact_id)->get();
+        } 
+        else {
+            $contacts = Contact::all();
+        }
 
-        return response()->json([
-            'status' => 'Success',
-            'data' => $contacts
-        ]);
+        return response()->json([$contacts]);
     }
 
     public function addContact (Request $request) {
         
         $contacts = new Contact;
-        $contacts->user_id = $request->user_id;
+        $contacts->user_id = 3;
         $contacts->first_name = $request->first_name;
         $contacts->last_name = $request->last_name;
         $contacts->phone = $request->phone;

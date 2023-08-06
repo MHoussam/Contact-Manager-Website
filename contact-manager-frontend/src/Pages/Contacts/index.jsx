@@ -7,10 +7,11 @@ const Contacts = ()=>{
   const [contacts, setContacts] = useState([]);
 
   const fetchContacts = async ()=>{
-    const response = await axios.get("http://localhost:3000/posts");
-    console.log(response.data)
-    setContacts(response.data)
+    const response = await axios.get("http://localhost:8000/api/displayContacts");
+    console.log(response.data[0])
+    setContacts(response.data[0])
   }
+
   useEffect(()=>{
     fetchContacts()
   }, [])

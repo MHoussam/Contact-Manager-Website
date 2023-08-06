@@ -6,9 +6,20 @@ const Contact = () => {
   const [contact, setContact] = useState()
   const {id} = useParams()
 
+  const fetchContact = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8000/api/displayContacts/${id}`);
+      console.log('contact:', response.data[0][0]); // Correctly access response.data
+      setContact(response.data[0][0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(()=>{
-    axios.get(`http://localhost:3000/posts/${id}`).then(response=>setContact(response.data)).catch(e=>console.log(e))
-  },[])
+    fetchContact()
+  }, [])
+
 
   return (
    <div className="test">
@@ -17,7 +28,8 @@ const Contact = () => {
         <h1>{contact.first_name}</h1>
         <p>{contact.last_name}</p>
       </>
-      : <h2>Contact not found</h2>}
+      : <h2>Contact not found</h2>
+    }
    </div>
   )
 }

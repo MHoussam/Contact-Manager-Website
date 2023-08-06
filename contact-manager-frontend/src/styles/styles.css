@@ -12,3 +12,11 @@
 .flex {
   display: flex;
 }
+
+.contact-container {
+  margin-left: 5%;
+}
+
+.contact-info {
+  column-gap: 60px;
+}

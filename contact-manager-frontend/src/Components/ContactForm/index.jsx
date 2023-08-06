@@ -48,13 +48,39 @@ const ContactForm = ({setContacts}) =>{
           </div>
         </div>
       </div>
-      <div className="contactForm_container">
-        <input name="first_name" placeholder="First Name" value={data.first_name} onChange={handleDataChange}/>
-        <input name="last_name" placeholder="Last Name" value={data.last_name} onChange={handleDataChange}/>
-        <input name="phone" placeholder="Phone Number" type="number" value={data.phone} onChange={handleDataChange}/>
-        <input name="address_latitude" type="number" placeholder="Latitude Address" value={data.address_latitude} onChange={handleDataChange}/>
-        <input name="address_longitude" type="number" placeholder="Longitude Address" value={data.address_longitude} onChange={handleDataChange}/>
-        <button onClick={handleSubmit}>Add</button>
+
+      <div className="addForm flex center">
+        <div className="contactForm_container flex column">
+          <div className="names flex">
+            <div className="fname flex column width-50">
+              <label for="first_name"><span className="bold">First Name:</span></label>
+              <input name="first_name" className="first_name" placeholder="First Name" value={data.first_name} onChange={handleDataChange}/>
+            </div>
+            <div className="lname flex column width-50">
+              <label for="last_name"><span className="bold">Last Name:</span></label>
+              <input name="last_name"  placeholder="Last Name" value={data.last_name} onChange={handleDataChange}/>
+            </div>
+          </div>
+          <div className="numbers flex">
+            <div className="phone flex column width-33">
+            <label for="phone"><span className="bold">Phone Number:</span></label>
+              <input name="phone" placeholder="Phone Number" type="number" value={data.phone} onChange={handleDataChange}/>
+            </div>
+            <div className="lat flex column width-33">
+            <label for="address_latitude"><span className="bold">Latitude Address:</span></label>
+              <input name="address_latitude" type="number" placeholder="Latitude Address" value={data.address_latitude} onChange={handleDataChange}/>
+            </div>
+            <div className="long flex column width-33">
+            <label for="address_longitude"><span className="bold">Longitude Address:</span></label>
+              <input name="address_longitude" type="number" placeholder="Longitude Address" value={data.address_longitude} onChange={handleDataChange}/>
+            </div>
+          </div>
+          <div className="btn">
+            <div className="flex center">
+              <button className="add-contact-btn" onClick={handleSubmit}>Add</button>
+            </div>
+          </div>
+        </div>
       </div>
   </>
   )

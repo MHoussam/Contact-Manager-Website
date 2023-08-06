@@ -39,8 +39,8 @@ const Contact = () => {
     <div className="contact-container">
       {contact ? 
         <>
-          <div className="header flex">
-            <div className="title flex">
+          <div className="header-contact flex">
+            <div className="title-contact flex">
               <h1 className="flex contacts-title">{contact.first_name} {contact.last_name}</h1>
             </div>
 
@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="contact-info flex center">
+          <div className="contact-info flex">
             <p><span className="bold">Phone Number:</span> {contact.phone}</p>
             <p><span className="bold">Latitude Address:</span> {contact.address_latitude}</p>
             <p><span className="bold">Longitude Address:</span> {contact.address_longitude}</p>
@@ -69,7 +69,7 @@ const Contact = () => {
             </Marker>
           </MapContainer>
         </>
-        : <h2>Contact not found</h2>
+        : <div />
       }
     </div>
   )

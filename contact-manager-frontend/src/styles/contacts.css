@@ -1,8 +1,8 @@
-.contacts-title {
+.title {
+    width: 50%;
 }
 
-.title, .add-container {
-    width: 50%;
+.add-container {
     justify-content: flex-end;
 }
 

@@ -7,7 +7,6 @@ const ContactsList = ({contacts})=>{
   const navigate = useNavigate();
   
   const handleNavigate=(id)=>{
-    console.log("ss: "+id)
     navigate(`${id}`)
   }
 

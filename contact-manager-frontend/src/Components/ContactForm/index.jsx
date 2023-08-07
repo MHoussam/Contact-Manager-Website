@@ -18,9 +18,6 @@ const ContactForm = ({setContacts}) =>{
 
   const handleSubmit = async ()=>{
     try{
-      console.log("this is the data: " + data.first_name)
-      console.log("this is the data: " + data.last_name)
-      console.log("this is the data: " + data.phone)
       const response = await axios.post("http://localhost:8000/api/addContact", data)
       setContacts((contacts)=>[...contacts, response.data])
       setData({first_name: "", last_name: "", phone: "", address_latitude: "", address_longitude: ""})

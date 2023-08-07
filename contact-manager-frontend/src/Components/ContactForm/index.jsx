@@ -41,7 +41,7 @@ const ContactForm = ({setContacts}) =>{
 
         <div className="add-container flex">
           <div className="add center flex">
-            <button className="add-btn pointer" onClick={handleButtonClick}>Display Contacts</button>
+            <button className="add-btn pointer bold" onClick={handleButtonClick}>Display Contacts</button>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@ const ContactForm = ({setContacts}) =>{
           </div>
           <div className="btn">
             <div className="flex center">
-              <button className="add-contact-btn" onClick={handleSubmit}>Add</button>
+              <button className="add-contact-btn bold" onClick={handleSubmit}>Add</button>
             </div>
           </div>
         </div>

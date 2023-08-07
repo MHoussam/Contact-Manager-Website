@@ -56,4 +56,6 @@
 .add-contact-btn {
   padding: 1% 2%;
   border-radius: 10px;
+  border-width: 1px;
+  background-color: rgb(220, 255, 94);
 }

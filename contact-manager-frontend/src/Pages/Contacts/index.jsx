@@ -33,7 +33,7 @@ const Contacts = () => {
 
         <div className="add-container flex">
           <div className="add center flex">
-            <button className="add-btn pointer" onClick={handleButtonClick}>
+            <button className="add-btn pointer bold" onClick={handleButtonClick}>
               Add Contact
             </button>
           </div>

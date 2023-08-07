@@ -52,7 +52,7 @@ const Contact = () => {
           </div>
 
           <div className="contact-info flex">
-            <p><span className="bold">Phone Number:</span> {contact.phone}</p>
+            <p><span className="bold">Phone Number:</span> +{contact.phone}</p>
             <p><span className="bold">Latitude Address:</span> {contact.address_latitude}</p>
             <p><span className="bold">Longitude Address:</span> {contact.address_longitude}</p>
           </div>
